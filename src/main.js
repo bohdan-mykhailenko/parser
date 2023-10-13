@@ -1,33 +1,27 @@
-const axios = require('axios');
 const cheerio = require('cheerio');
-const mysql = require('mysql');
-const parseCharacteristics = require('./helpers/parseCharacteristics')
-
-const connection = mysql.createConnection({
-  host: '127.0.0.1',
-  port: 3306,
-  user: 'admin',
-  password: 'admin',
-  database: 'store',
-});
-
-connection.connect();
-
-const url = 'https://hotline.ua/ua/mobile/mobilnye-telefony-i-smartfony/?mode=series&sort=popularity';
+const connection = require('./database/connection');
+const { fetchProducts } = require('./api/products');
+const parseCharacteristics = require('./helpers/parseCharacteristics');
 
 const scrapeAndStoreData = async () => {
   try {
-    const response = await axios.get(url);
-    const $ = cheerio.load(response.data);
-    const list = $('.list-body__content .list-item');
+    const htmlData = await fetchProducts();
+    const $ = cheerio.load(htmlData);
+    const productItem = $('.list-item');
 
-    list.each((index, element) => {
-      const product = {
-        name: $(element).find('.list-item__title').text(),
-        description: "empty",
-        price: parseFloat($(element).find('.price__value').text().replace(' ', '')),
-        images: $(element).find('img').attr('src'),
-      };
+    productItem.each((index, element) => {
+      const product = {};
+
+      const name = $(element).find('.list-item__title').text();
+      const description = "empty";
+      const price = Number($(element).find('.price__value').text().replace(/\D/g, ''))
+
+      const image = $(element).find('img').attr('src');
+
+      product.name = name
+      product.description = description;
+      product.price = price;
+      product.image = image;
 
       const characteristics = $(element).find('.list-item__specifications-text').text();
       const parsedCharacteristics = parseCharacteristics(characteristics);
@@ -50,7 +44,7 @@ const scrapeAndStoreData = async () => {
       });
     });
   } catch (error) {
-    console.error(error);
+    throw new Error(error);
   } finally {
     connection.end();
   }

@@ -1,13 +1,14 @@
 const axios = require('axios');
+const url = require('../consts/api-url');
 
-async function fetchData(url) {
+const fetchProducts = async () => {
   try {
     const response = await axios.get(url);
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw new Error(error);
   }
 }
 
-module.exports = { fetchData };
+module.exports = { fetchProducts };

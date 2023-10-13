@@ -19,7 +19,8 @@ This project is a application to parse data from online store and set them into 
 
 Filled table products in the local database:
 
-![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/e83d9385-5160-41fb-9087-99dc47ace377)
+![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/6c9c6eab-deac-4395-b721-a570d1b4b6e3)
+
 
 Parsed data on web page:
 

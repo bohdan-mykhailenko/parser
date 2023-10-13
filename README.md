@@ -71,7 +71,7 @@ Parsed data on web page:
   * Go to the src/database/connection file
   * Set your database config values
 ```shell
-  const connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: your_host,
   port: your_port,
   user: your_user,

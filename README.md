@@ -5,7 +5,7 @@
 
 ## Description
 
-This project is a application to parse data from online store and set them into database.
+This project is a simple application to parse data from an electronic store and set them into the database.
 
 ## Technologies
 

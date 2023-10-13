@@ -36,20 +36,14 @@ Parsed data on web page:
 ```shell
   https://github.com/bohdan-mykhailenko/parcer.git
 ```
-    
-2.  Navigate to the project dir:
-   
-```shell 
-  cd pricing_table
-```
 
-3.  Install dependencies:
+2.  Install dependencies:
     
 ```shell
   npm install
 ```
 
-3. Create database
+3. Create MySQL or MariadDB database
 ```shell
  CREATE DATABASE store;
 ```

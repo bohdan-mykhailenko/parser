@@ -12,10 +12,9 @@ const scrapeAndStoreData = async () => {
     productItem.each((index, element) => {
       const product = {};
 
-      const name = $(element).find('.list-item__title').text();
+      const name = $(element).find('.list-item__title').text().trim();
       const description = "empty";
       const price = Number($(element).find('.price__value').text().replace(/\D/g, ''))
-
       const image = $(element).find('img').attr('src');
 
       product.name = name

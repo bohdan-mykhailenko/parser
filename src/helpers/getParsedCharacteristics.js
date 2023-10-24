@@ -1,4 +1,4 @@
-const parseCharacteristics = (characteristics) => {
+const getParsedCharacteristics = (characteristics) => {
   const parsedData = {};
 
   const screenResolutionMatch = characteristics.match(/екран:\s(.*?)\s•/);

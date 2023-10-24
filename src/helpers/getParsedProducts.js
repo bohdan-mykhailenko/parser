@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const { fetchProducts } = require('../api/products');
 const url = require('../consts/api-url');
-const parseCharacteristics = require('./parseCharacteristics');
+const getParsedCharacteristics = require('./getParsedCharacteristics');
 const getCategoryName = require('./getCategoryName');
 
 const getParsedProducts = async () => {
@@ -25,7 +25,7 @@ const getParsedProducts = async () => {
       product.image = image;
 
       const characteristics = $(element).find('.list-item__specifications-text').text();
-      const parsedCharacteristics = parseCharacteristics(characteristics);
+      const parsedCharacteristics = getParsedCharacteristics(characteristics);
 
       product.characteristics = [
         { name: 'screen_resolution', value: parsedCharacteristics.screen_resolution || 'DefaultResolution' },

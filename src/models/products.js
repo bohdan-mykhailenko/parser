@@ -1,4 +1,4 @@
-const { findOrCreateCategory, insertProductData, insertOrUpdateCharacteristics } = require('../database/db');
+const { findOrCreateCategory, insertProductData, insertOrUpdateCharacteristics } = require('../database/operations');
 
 async function insertProduct(product) {
   try {

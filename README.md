@@ -25,6 +25,9 @@ Connection beetwen characteristics and certain product:
 
 ![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/1af345b9-7f90-49c8-bbab-bb4103d66487)
 
+Filtered product
+
+![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/6a4a8bd2-4b9a-458b-82db-5b0da6cb360e)
 
 
 ## Getting Started

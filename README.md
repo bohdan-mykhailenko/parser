@@ -86,7 +86,7 @@ CREATE TABLE characteristics (
 ```
     
 5. Config database connection
-  * Go to the src/database/connection file
+  * Go to the src/config/db.config.js file
   * Set your database config values
 ```shell
 const connection = mysql.createConnection({

@@ -1,8 +1,8 @@
 const cheerio = require('cheerio');
 const { fetchProducts } = require('../api/products');
 const url = require('../consts/api-url');
-const parseCharacteristics = require('../helpers/parseCharacteristics');
-const getCategoryName = require('../helpers/getCategoryName');
+const parseCharacteristics = require('./parseCharacteristics');
+const getCategoryName = require('./getCategoryName');
 
 const getParsedProducts = async () => {
   try {

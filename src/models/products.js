@@ -3,7 +3,7 @@ const { findOrCreateCategory, insertProductData, insertOrUpdateCharacteristics }
 async function insertProduct(product) {
   try {
     const categoryID = await findOrCreateCategory(product.category);
-    const productID = await insertProductData(product.name, product.price, categoryID);
+    const productID = await insertProductData(product.name, product.price, product.image, categoryID);
 
     await insertOrUpdateCharacteristics(product.characteristics, productID);
   } catch (error) {

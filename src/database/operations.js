@@ -65,9 +65,9 @@ async function insertProductCharacteristic(productID, characteristicID, value) {
   await queryDatabase(productCharQuery, [productID, characteristicID, value]);
 }
 
-async function insertProductData(productName, productPrice, categoryID) {
-  const productQuery = 'INSERT INTO products (name, price, category_id) VALUES (?, ?, ?)';
-  const productInsertResult = await queryDatabase(productQuery, [productName, productPrice, categoryID]);
+async function insertProductData(productName, productPrice, productImage, categoryID) {
+  const productQuery = 'INSERT INTO products (name, price, image, category_id) VALUES (?, ?, ?, ?)';
+  const productInsertResult = await queryDatabase(productQuery, [productName, productPrice, productImage, categoryID]);
 
   return productInsertResult.insertId;
 }

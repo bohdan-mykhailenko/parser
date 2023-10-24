@@ -36,9 +36,9 @@ async function getFilteredData() {
   }
 }
 
-//storeData();
+storeData();
 
-getFilteredData();
+// getFilteredData();
 
 
 

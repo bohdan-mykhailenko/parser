@@ -48,4 +48,4 @@ const getParsedCharacteristics = (characteristics) => {
   return parsedData;
 }
 
-module.exports = parseCharacteristics;
+module.exports = getParsedCharacteristics;

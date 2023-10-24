@@ -19,12 +19,12 @@ This project is a simple application to parse data from an electronic store and 
 
 Filled table products in the local database:
 
-![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/6c9c6eab-deac-4395-b721-a570d1b4b6e3)
+![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/055662d6-bea4-437c-9441-8606bdceedb1)
 
+Connection beetwen characteristics and certain product:
 
-Parsed data on web page:
+![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/1af345b9-7f90-49c8-bbab-bb4103d66487)
 
-![image](https://github.com/bohdan-mykhailenko/parser/assets/76702178/ebfff9c6-6211-43f0-879a-dfb772fdeef2)
 
 
 ## Getting Started
@@ -48,22 +48,33 @@ Parsed data on web page:
  CREATE DATABASE store;
 ```
 
-4. Create table
+4. Create tables
 ```shell
- CREATE TABLE products (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255),
-  description TEXT,
-  price DECIMAL(10, 2),
-  image TEXT,
-  general VARCHAR(255),
-  screen_resolution VARCHAR(255),
-  screen_type VARCHAR(255),
-  processor VARCHAR(255),
-  os VARCHAR(255),
-  accumulator INT,
-  camera TEXT,
-  nfc VARCHAR(3)
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2),
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE product_characteristics (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT,
+    characteristic_id INT,
+    value VARCHAR(255),
+    FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (characteristic_id) REFERENCES characteristics(id)
+);
+
+CREATE TABLE characteristics (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
 );
 ```
     

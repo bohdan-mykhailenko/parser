@@ -1,13 +1,6 @@
 const parseCharacteristics = (characteristics) => {
   const parsedData = {};
 
-  const generalMatch = characteristics.match(/Смартфон • (.*?)\s•/);
-  if (generalMatch) {
-    const generalValue = generalMatch[1].trim();
-
-    parsedData.general = generalValue.includes("екран:") ? '' : generalValue;
-  }
-
   const screenResolutionMatch = characteristics.match(/екран:\s(.*?)\s•/);
   if (screenResolutionMatch) {
     parsedData.screen_resolution = screenResolutionMatch[1].trim();

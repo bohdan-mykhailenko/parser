@@ -1,7 +1,6 @@
 const axios = require('axios');
-const url = require('../consts/api-url');
 
-const fetchProducts = async () => {
+const fetchProducts = async (url) => {
   try {
     const response = await axios.get(url);
 

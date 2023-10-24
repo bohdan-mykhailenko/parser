@@ -3,6 +3,10 @@
 ## Overview
 [**Parsed Web Page**](https://hotline.ua/ua/mobile/mobilnye-telefony-i-smartfony/?mode=series&sort=popularity)
 
+**Database Diagram**
+
+![db](https://github.com/bohdan-mykhailenko/parser/assets/76702178/7f2ce67a-cbf9-4591-bbbd-0fe2a441e9f8)
+
 ## Description
 
 This project is a simple application to parse data from an electronic store and set them into the database.
